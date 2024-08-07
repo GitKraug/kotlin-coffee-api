@@ -12,7 +12,7 @@ import org.springframework.test.context.ActiveProfiles
 @SpringBootTest
 @ActiveProfiles("test")
 @WithPostgresTestContainers
-class CoffeeControllerTest {
+class CoffeeServiceTest {
     @Autowired
     private val coffeeRepository: CoffeeRepository? = null
 
