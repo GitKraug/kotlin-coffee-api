@@ -1,4 +1,4 @@
-package no.kraug.coffee.integration
+package no.kraug.coffee.integration.service
 
 import no.kraug.coffee.model.BeanType
 import no.kraug.coffee.repository.CoffeeRepository
@@ -14,19 +14,19 @@ import org.springframework.test.context.ActiveProfiles
 @WithPostgresTestContainers
 class CoffeeServiceIT {
     @Autowired
-    private val coffeeRepository: CoffeeRepository? = null
+    private lateinit var coffeeRepository: CoffeeRepository
 
     @Test
     fun `all coffee entities returned`() {
-        val existingBeans = coffeeRepository?.findAll()
-        assertEquals(6, existingBeans?.size)
+        val existingBeans = coffeeRepository.findAll()
+        assertEquals(6, existingBeans.size)
     }
 
     @Test
     fun `4 coffee types with beans not roasted and 2 with beans roasted`() {
-        val existingBeans = coffeeRepository?.findAll()
+        val existingBeans = coffeeRepository.findAll()
 
-        assertEquals(4, existingBeans?.filter { BeanType.not_roasted == it.beanType }?.toList()?.size)
-        assertEquals(2, existingBeans?.filter { BeanType.roasted == it.beanType }?.toList()?.size)
+        assertEquals(4, existingBeans.filter { BeanType.not_roasted == it.beanType }.toList().size)
+        assertEquals(2, existingBeans.filter { BeanType.roasted == it.beanType }.toList().size)
     }
 }
