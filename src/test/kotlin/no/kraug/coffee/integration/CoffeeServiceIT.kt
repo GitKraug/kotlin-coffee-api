@@ -1,4 +1,4 @@
-package no.kraug.coffee.service
+package no.kraug.coffee.integration
 
 import no.kraug.coffee.model.BeanType
 import no.kraug.coffee.repository.CoffeeRepository
@@ -12,7 +12,7 @@ import org.springframework.test.context.ActiveProfiles
 @SpringBootTest
 @ActiveProfiles("test")
 @WithPostgresTestContainers
-class CoffeeServiceTest {
+class CoffeeServiceIT {
     @Autowired
     private val coffeeRepository: CoffeeRepository? = null
 
