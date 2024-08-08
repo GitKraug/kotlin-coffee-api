@@ -1,0 +1,1 @@
+Simple Kotlin-project using Spring-JPA and Testcontainers for integration testing.
