@@ -15,12 +15,12 @@ class CoffeeEntity (
     val id: UUID? = UUID.randomUUID(),
 
     @Column(name = "title", nullable = false)
-    val name: String,
+    val name: String?,
 
     @Column(name = "bean_type", nullable = false)
     @Enumerated(EnumType.STRING)
     @JdbcType(PostgreSQLEnumJdbcType::class)
-    val beanType: BeanType,
+    val beanType: BeanType?,
 
     @Column(name = "created_at", nullable = false)
     val createdAt: LocalDateTime? = LocalDateTime.now()

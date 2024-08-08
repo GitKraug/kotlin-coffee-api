@@ -20,5 +20,7 @@ class CoffeeController (
     fun findAllCoffeeCustomers(): List<GoRestUser> = customerService.findAllCustomers()
 
     @PostMapping("/new")
-    fun createNewCoffee(@RequestBody coffee: CoffeeRequestBody) = coffeeService.saveNewCoffee(coffee)
+    fun createNewCoffee(@RequestBody coffee: CoffeeRequestBody)  {
+        coffeeService.saveNewCoffee(coffee)
+    }
 }
