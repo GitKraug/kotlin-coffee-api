@@ -1,20 +1,23 @@
-version: '3.9'
-
 services:
   postgres:
-    image: postgres
     restart: always
+    image: postgres:16.3
+    container_name: coffee_postgres
     environment:
       POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: db
     ports:
       - "5432:5432"
     volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
       - pgdata:/var/lib/postgresql/data
 
   coffee-api:
     build:
       context: .
     environment:
+      - "SPRING_PROFILES_ACTIVE=local"
+      - "DATABASE_URL=jdbc:postgresql://postgres:5432/db"
       - "DATABASE_PASSWORD=postgres"
     ports:
       - "8080:8080"

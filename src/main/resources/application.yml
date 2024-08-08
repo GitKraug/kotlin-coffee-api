@@ -14,7 +14,13 @@ spring:
     active: local
 
   datasource:
-    url: ${DATABASE_URL:jdbc:postgresql://postgres:5432/db}
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/db}
     username: postgres
     password: ${DATABASE_PASSWORD}
+
+external:
+  api:
+    gorest:
+      base-url: https://gorest.co.in
+      list-users-endpoint: /public/v2/users
 
