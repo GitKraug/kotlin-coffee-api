@@ -1,7 +1,7 @@
 package no.kraug.coffee.rest.service
 
-import no.kraug.coffee.rest.model.GoRestConfigurationProperties
-import no.kraug.coffee.rest.model.GoRestUser
+import no.kraug.coffee.rest.model.CustomersApiConfigurationProperties
+import no.kraug.coffee.rest.model.CustomerApiResponse
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.core.ParameterizedTypeReference
 import org.springframework.http.HttpEntity
@@ -16,13 +16,13 @@ import org.springframework.web.client.UnknownHttpStatusCodeException
 
 @Service
 class GoRestApiClientService(
-    @Qualifier("goRestTemplate") val restTemplate: RestTemplate,
-    @Qualifier("goRestConfiguration") val apiProperties: GoRestConfigurationProperties
+    @Qualifier("customerRestTemplate") val restTemplate: RestTemplate,
+    @Qualifier("customerRestApiConfigProps") val apiProperties: CustomersApiConfigurationProperties
 ) {
-    fun callGoRestApi(): List<GoRestUser> {
+    fun callCustomerRestApi(): List<CustomerApiResponse> {
         try {
-            val respType = object: ParameterizedTypeReference<List<GoRestUser>>(){}
-            return restTemplate.exchange(apiProperties.listUsersEndpoint, GET, createHeaders(), respType).body.orEmpty()
+            val respType = object: ParameterizedTypeReference<List<CustomerApiResponse>>(){}
+            return restTemplate.exchange(apiProperties.allCustomersEndpoint, GET, createHeaders(), respType).body.orEmpty()
         } catch (cee: HttpClientErrorException) {
             throw cee
         } catch (see: HttpServerErrorException) {

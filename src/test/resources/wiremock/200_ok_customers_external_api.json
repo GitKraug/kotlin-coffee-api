@@ -1,0 +1,29 @@
+{
+  "id": "c640e8b0-6745-4733-924e-2bff9be4849e",
+  "request": {
+    "method": "GET",
+    "urlPathPattern": "/public/v2/users"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "id": 7301413,
+        "name": "Mr. Goswamee Verma",
+        "email": "mr_goswamee_verma@herzog.test",
+        "gender": "male",
+        "status": "active"
+      },
+      {
+        "id": 7301411,
+        "name": "Tanushri Banerjee",
+        "email": "banerjee_tanushri@abbott-mohr.example",
+        "gender": "male",
+        "status": "inactive"
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "617a6658-eea3-4795-abe8-24450aaf6fe0",
+		"name": "Kotlin Cofffee API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1008436"
+	},
+	"item": [
+		{
+			"name": "External API",
+			"item": [
+				{
+					"name": "Test external customers API",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET all coffees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/coffee/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coffee",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET all customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/customers/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"customers",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST create new coffee Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"New coffee...\",\n    \"beanType\": \"roasted\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/coffee/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coffee",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST create new coffee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"New coffee...\",\n    \"beanType\": \"roasted\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/coffee/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"coffee",
+						"new"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

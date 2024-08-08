@@ -20,7 +20,7 @@ spring:
 
 external:
   api:
-    gorest:
+    customers:
       base-url: https://gorest.co.in
-      list-users-endpoint: /public/v2/users
+      all-customers-endpoint: /public/v2/users
 

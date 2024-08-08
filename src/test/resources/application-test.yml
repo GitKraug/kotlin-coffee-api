@@ -3,3 +3,9 @@ spring:
     url: jdbc:postgresql://localhost:5432/test_db
     username: postgres
     password: postgres
+
+external:
+  api:
+    customers:
+      base-url: http://localhost:9090
+      all-customers-endpoint: /public/v2/users

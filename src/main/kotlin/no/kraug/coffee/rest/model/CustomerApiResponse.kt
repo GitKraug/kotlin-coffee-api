@@ -1,6 +1,6 @@
 package no.kraug.coffee.rest.model
 
-data class GoRestUser(
+data class CustomerApiResponse(
     val id: Long,
     val name: String,
     val email: String,
