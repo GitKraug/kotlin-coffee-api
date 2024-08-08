@@ -12,4 +12,5 @@ import java.util.*
 class CoffeeService (@Autowired val db: CoffeeRepository) {
     fun findAllCoffeeTypes(): List<CoffeeEntity> = db.findAll()
     fun saveNewCoffee(coffee: CoffeeRequestBody) = db.save(CoffeeEntity(UUID.randomUUID(), coffee.name, coffee.beanType, LocalDateTime.now()))
+    fun deleteCoffeeById(id: UUID) = db.deleteById(id)
 }

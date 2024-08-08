@@ -6,6 +6,7 @@ import no.kraug.coffee.rest.model.GoRestUser
 import no.kraug.coffee.service.CoffeeCustomerService
 import no.kraug.coffee.service.CoffeeService
 import org.springframework.web.bind.annotation.*
+import java.util.UUID
 
 @RestController
 @RequestMapping("/api/coffee")
@@ -21,4 +22,7 @@ class CoffeeController (
 
     @PostMapping("/new")
     fun createNewCoffee(@RequestBody coffee: CoffeeRequestBody) = coffeeService.saveNewCoffee(coffee)
+
+    @DeleteMapping("/{id}")
+    fun deleteCoffeeById(@PathVariable("id") coffeeId: UUID) = coffeeService.deleteCoffeeById(coffeeId)
 }

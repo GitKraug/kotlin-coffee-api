@@ -5,6 +5,6 @@ import no.kraug.coffee.rest.service.GoRestApiClientService
 import org.springframework.stereotype.Service
 
 @Service
-class CoffeeCustomerService (val goRestApiClientService: GoRestApiClientService) {
+class CoffeeCustomerService(val goRestApiClientService: GoRestApiClientService) {
     fun findAllCustomers(): List<GoRestUser> = goRestApiClientService.callGoRestApi()
 }
