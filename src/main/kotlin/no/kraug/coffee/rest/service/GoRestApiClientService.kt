@@ -4,14 +4,15 @@ import no.kraug.coffee.model.rest.GoRestConfigurationProperties
 import no.kraug.coffee.model.rest.GoRestUser
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.core.ParameterizedTypeReference
+import org.springframework.http.HttpEntity
+import org.springframework.http.HttpHeaders
 import org.springframework.http.HttpMethod.GET
-import org.springframework.http.RequestEntity
+import org.springframework.http.MediaType
 import org.springframework.stereotype.Service
 import org.springframework.web.client.HttpClientErrorException
 import org.springframework.web.client.HttpServerErrorException
 import org.springframework.web.client.RestTemplate
 import org.springframework.web.client.UnknownHttpStatusCodeException
-import java.net.URI
 
 @Service
 class GoRestApiClientService(
@@ -20,10 +21,8 @@ class GoRestApiClientService(
 ) {
     fun callGoRestApi(): List<GoRestUser> {
         try {
-            val request = RequestEntity<Any>(GET, URI.create(apiProperties.listUsersEndpoint))
             val respType = object: ParameterizedTypeReference<List<GoRestUser>>(){}
-
-            return restTemplate.exchange(request, respType).body.orEmpty()
+            return restTemplate.exchange(apiProperties.listUsersEndpoint, GET, createHeaders(), respType).body.orEmpty()
         } catch (cee: HttpClientErrorException) {
             throw cee
         } catch (see: HttpServerErrorException) {
@@ -33,5 +32,12 @@ class GoRestApiClientService(
         } catch (e: Exception) {
             throw e
         }
+    }
+
+    fun createHeaders(): HttpEntity<String> {
+        val headers = HttpHeaders()
+        headers.contentType = MediaType.APPLICATION_JSON
+
+        return HttpEntity(null, headers)
     }
 }
