@@ -1,7 +1,7 @@
-package no.kraug.coffee.rest.service
+package no.kraug.coffee.rest.external.service
 
-import no.kraug.coffee.rest.model.CustomersApiConfigurationProperties
-import no.kraug.coffee.rest.model.CustomerApiResponse
+import no.kraug.coffee.rest.external.model.CustomersApiConfigurationProperties
+import no.kraug.coffee.rest.external.model.CustomerApiResponse
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.core.ParameterizedTypeReference
 import org.springframework.http.HttpEntity

@@ -1,6 +1,6 @@
-package no.kraug.coffee.rest.configuration
+package no.kraug.coffee.rest.external.configuration
 
-import no.kraug.coffee.rest.model.CustomersApiConfigurationProperties
+import no.kraug.coffee.rest.external.model.CustomersApiConfigurationProperties
 import org.springframework.boot.web.client.RestTemplateBuilder
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

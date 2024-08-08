@@ -1,6 +1,6 @@
 package no.kraug.coffee.resource
 
-import no.kraug.coffee.rest.model.CustomerApiResponse
+import no.kraug.coffee.rest.external.model.CustomerApiResponse
 import no.kraug.coffee.service.CoffeeCustomerService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping

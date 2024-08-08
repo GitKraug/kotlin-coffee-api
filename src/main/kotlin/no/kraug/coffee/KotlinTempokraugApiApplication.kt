@@ -1,6 +1,6 @@
 package no.kraug.coffee
 
-import no.kraug.coffee.rest.model.CustomersApiConfigurationProperties
+import no.kraug.coffee.rest.external.model.CustomersApiConfigurationProperties
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.runApplication
