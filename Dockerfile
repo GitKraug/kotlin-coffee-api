@@ -9,7 +9,8 @@ COPY pom.xml .
 COPY pom.xml /app
 COPY src /app/src
 
-RUN ./mvnw clean package -f /app/pom.xml -DskipTests
+RUN --mount=type=cache,target=/root/.m2 \
+    ./mvnw clean package -f /app/pom.xml -DskipTests
 
 FROM openjdk:22-jdk-slim
 WORKDIR /app

@@ -1,4 +1,4 @@
-package no.kraug.coffee.model.rest
+package no.kraug.coffee.rest.model
 
 import org.springframework.boot.context.properties.ConfigurationProperties
 

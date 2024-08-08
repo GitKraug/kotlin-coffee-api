@@ -1,6 +1,6 @@
 package no.kraug.coffee.rest.configuration
 
-import no.kraug.coffee.model.rest.GoRestConfigurationProperties
+import no.kraug.coffee.rest.model.GoRestConfigurationProperties
 import org.springframework.boot.web.client.RestTemplateBuilder
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

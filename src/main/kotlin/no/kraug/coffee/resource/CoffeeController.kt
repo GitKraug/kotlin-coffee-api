@@ -1,12 +1,11 @@
 package no.kraug.coffee.resource
 
 import no.kraug.coffee.model.jpa.CoffeeEntity
-import no.kraug.coffee.model.rest.GoRestUser
+import no.kraug.coffee.model.request.CoffeeRequestBody
+import no.kraug.coffee.rest.model.GoRestUser
 import no.kraug.coffee.service.CoffeeCustomerService
 import no.kraug.coffee.service.CoffeeService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/api/coffee")
@@ -19,4 +18,7 @@ class CoffeeController (
 
     @GetMapping("/customers/all")
     fun findAllCoffeeCustomers(): List<GoRestUser> = customerService.findAllCustomers()
+
+    @PostMapping("/new")
+    fun createNewCoffee(@RequestBody coffee: CoffeeRequestBody) = coffeeService.saveNewCoffee(coffee)
 }

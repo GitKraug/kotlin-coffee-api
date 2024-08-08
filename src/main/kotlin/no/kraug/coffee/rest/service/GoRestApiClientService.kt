@@ -1,7 +1,7 @@
 package no.kraug.coffee.rest.service
 
-import no.kraug.coffee.model.rest.GoRestConfigurationProperties
-import no.kraug.coffee.model.rest.GoRestUser
+import no.kraug.coffee.rest.model.GoRestConfigurationProperties
+import no.kraug.coffee.rest.model.GoRestUser
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.core.ParameterizedTypeReference
 import org.springframework.http.HttpEntity
