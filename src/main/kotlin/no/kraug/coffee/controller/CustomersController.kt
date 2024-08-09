@@ -1,4 +1,4 @@
-package no.kraug.coffee.resource
+package no.kraug.coffee.controller
 
 import no.kraug.coffee.rest.external.model.CustomerApiResponse
 import no.kraug.coffee.service.CoffeeCustomerService

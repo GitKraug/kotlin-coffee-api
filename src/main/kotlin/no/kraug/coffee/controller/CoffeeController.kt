@@ -1,4 +1,4 @@
-package no.kraug.coffee.resource
+package no.kraug.coffee.controller
 
 import no.kraug.coffee.model.jpa.CoffeeEntity
 import no.kraug.coffee.model.request.CoffeeRequestBody
