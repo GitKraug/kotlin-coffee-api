@@ -10,10 +10,10 @@
     </parent>
 
     <groupId>no.kraug</groupId>
-    <artifactId>tempokraug-api</artifactId>
+    <artifactId>kotlin-coffee-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>kotlin-tempokraug-api</name>
-    <description>kotlin-tempokraug-api</description>
+    <name>kotlin-coffee-api</name>
+    <description>API returning coffee types</description>
 
     <properties>
         <java.version>21</java.version>

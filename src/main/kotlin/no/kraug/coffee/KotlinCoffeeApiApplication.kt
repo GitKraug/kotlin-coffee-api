@@ -7,8 +7,8 @@ import org.springframework.boot.runApplication
 
 @SpringBootApplication
 @EnableConfigurationProperties(CustomersApiConfigurationProperties::class)
-class KotlinTempokraugApiApplication
+class KotlinCoffeeApiApplication
 
 fun main () {
-    runApplication<KotlinTempokraugApiApplication>()
+    runApplication<KotlinCoffeeApiApplication>()
 }
